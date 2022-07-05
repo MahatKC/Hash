@@ -117,7 +117,8 @@ def constant(val, tam):
 
 if __name__=="__main__":
     #tamanhos_conjuntos = [100000]
-    tamanhos_conjuntos = [50, 100, 200, 300, 500, 750, 1000, 1500, 2000, 3000] #, 5000, 7500, 10000, 12500, 15000, 20000, 25000, 30000, 40000, 50000, 75000, 100000]
+    #tamanhos_conjuntos = [50, 100, 200, 300, 500, 750, 1000, 1500, 2000, 3000] #, 
+    tamanhos_conjuntos = [5000, 7500, 10000, 12500, 15000, 20000, 25000, 30000, 40000, 50000, 75000, 100000]
     funcoes_hash = [mod_tam, mod_quarter_tam, constant]
     alfas = [0.5, 1]
 
