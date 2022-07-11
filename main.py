@@ -82,16 +82,17 @@ def query_encadeamento(query_list, tab_encadeamento, funcao_hash, alfa):
 def query_end_aberto(query_list, tab_end_aberto, funcao_hash, alfa):
 
     tamanho = int(len(query_list)/alfa)
-    num_query_end_aberto, num_miss_end_aberto = 1,0
+    num_query_end_aberto, num_miss_end_aberto = 0,0
     t0 = time.time()
 
     for elemento in query_list:
         index = funcao_hash(elemento, tamanho)
         valor = tab_end_aberto[index]
         index_ini = index
+        num_query_end_aberto += 1   #conta query inicial
         while valor != elemento:
             index += 1
-            num_query_end_aberto += 1
+            num_query_end_aberto += 1   #conta a próxima query (a próxima pode não entrar no while)
             valor = tab_end_aberto[index%tamanho]
             if (index%tamanho) == index_ini:
                 num_miss_end_aberto += 1
@@ -116,9 +117,7 @@ def constant(val, tam):
     return 25
 
 if __name__=="__main__":
-    #tamanhos_conjuntos = [100000]
-    #tamanhos_conjuntos = [50, 100, 200, 300, 500, 750, 1000, 1500, 2000, 3000] #, 
-    tamanhos_conjuntos = [5000, 7500, 10000, 12500, 15000, 20000, 25000, 30000, 40000, 50000, 75000, 100000]
+    tamanhos_conjuntos = [50, 100, 200, 300, 500, 750, 1000, 1500, 2000, 3000, 5000, 7500, 10000, 12500, 15000, 20000, 25000, 30000, 40000, 50000, 75000, 100000]
     funcoes_hash = [mod_tam, mod_quarter_tam, constant]
     alfas = [0.5, 1]
 
@@ -140,9 +139,6 @@ if __name__=="__main__":
                     percentual_colisao_encadeamento = (num_empty_positions-tamanho_conjunto)/tamanho_conjunto
                 else:
                     percentual_colisao_encadeamento = num_empty_positions/tamanho_conjunto
-
-                #print(tab_encadeamento)
-                #print(num_empty_positions)
 
                 results = pd.DataFrame({
                         'Função Hash': [funcao_hash.__name__],
