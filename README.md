@@ -1,6 +1,6 @@
 # Hash
 
-Project developed by  [@MahatKC](https://www.github.com/MahatKC), [@AmandaIsrael](https://www.github.com/AmandaIsrael) and (@igorFNegrizoli)[https://www.github.com/igorFNegrizoli] in pair programming in 2022.
+Project developed by  [@MahatKC](https://www.github.com/MahatKC), [@AmandaIsrael](https://www.github.com/AmandaIsrael) and [@igorFNegrizoli](https://www.github.com/igorFNegrizoli) in pair programming in 2022.
 
 This project was an assignment for the Algorithm Analysis and Design course we took in our 4th year of Computer Science.
 
